@@ -71,3 +71,10 @@ echo DONE
 
 date
 
+# so links in outputs don't break changing absolute links to relative symlinks
+# John found this tool and made it a module
+module load symlinks/1.4
+
+symlinks -c ${sampleName}/visualization
+
+mv -v ${tmpDir} ${BaseDir}
